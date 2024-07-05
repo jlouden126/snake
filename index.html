@@ -8,7 +8,21 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Snake Game</h1>
+    <button id="main-menu">Back to Main Menu</button>
+
+    <div id="menu" class="active">
+        <h1>Snake Game</h1>
+        <button id="play-button">Play</button>
+        <button id="rules-button">How To Play</button>
+    </div>
+    <div id="game">
+        <div id="scoreboard">Score: 0</div>
+        <div id="game-over">Game Over</div>
+        <button id="play-again-button">Play Again</button>
+    </div>
+    <div id="rules">
+        <div>RULES OF THE GAME</div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="js/food.js"></script>
     <script src="js/sketch.js"></script>

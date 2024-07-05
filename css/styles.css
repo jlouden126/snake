@@ -9,5 +9,75 @@ body {
 }
 canvas {
     border: 1px solid black;
-    background-color: blue;
+}
+
+#scoreboard {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+#menu, #game {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+#menu.active, #game.active {
+    display: flex;
+}
+
+#game-over {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 2px 2px 5px black;
+}
+
+#rules {
+    display: none;
+}
+
+#play-button {
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#play-again-button {
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px black;
+}
+
+#main-menu {
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px black;
+}
+
+#rules-button {
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

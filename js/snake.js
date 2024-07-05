@@ -9,6 +9,9 @@ class Snake {
       this.dir = 1; // 1 = right, 2 = down, 3 = left, 4 = right
       this.lastX = width/2;
       this.lastY = height/2;
+      this.score = 0; // Initialize score
+      this.scoreElement = document.getElementById('scoreboard'); // Get the scoreboard element
+      this.alive = true;
     }
   
     draw() {
@@ -20,6 +23,7 @@ class Snake {
   
     update() {
         this.hitDetection();
+        this.hitWall();
 
         this.lastX = this.body[this.body.length-1].x;     // track the last X and Y  
         this.lastY = this.body[this.body.length-1].y;     // so we can put the new body there
@@ -42,10 +46,23 @@ class Snake {
     hitDetection() {
         for (let i = 1; i < this.body.length; i++) {
           if (this.body[0].x == this.body[i].x && this.body[0].y == this.body[i].y) {
-            this.spawn();
+            console.log("H",this.body[0].x,this.body[0].y);
+
+            this.alive = false;
           }
         }
       }
+
+    hitWall() {
+        if (this.body[0].x < 0 || this.body[0].y < 0 || this.body[0].x == width || this.body[0].y == height) {
+          this.alive = false;
+        }
+    }
+
+    updateScore() {
+        this.score += 1; // Increase score by 10 (or any other logic for scoring)
+        this.scoreElement.innerHTML = `Score: ${this.score}`; // Update the scoreboard
+    }
 
     //Grows the snake
     grow() {
@@ -58,4 +75,8 @@ class Snake {
           return true;     
         }
       }
+
+    hasGameEnded() {
+      return this.alive;
+    }
   }
